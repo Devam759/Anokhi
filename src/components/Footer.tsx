@@ -5,19 +5,16 @@ import brandData from '@/data/brand.json';
 
 const Footer = () => {
   return (
-    <footer className="relative bg-brown-900 text-cream-50 py-16 px-4 overflow-hidden">
-      {/* Classical Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
+    <footer className="relative py-16 px-4 overflow-hidden" style={{ backgroundColor: '#3d2f1a' }}>
+      {/* Background Image */}
+      <div className="absolute inset-0 opacity-15">
         <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fdf9f0' fill-opacity='0.1'%3E%3Cpath d='M40 40c0-22.091-17.909-40-40-40v40h40zm0 0c0 22.091 17.909 40 40 40V40H40z'/%3E%3Cpath d='M20 20c0-11.046-8.954-20-20-20v20h20zm0 0c0 11.046 8.954 20 20 20V20H20z'/%3E%3C/g%3E%3C/svg%3E")`,
-          backgroundRepeat: 'repeat'
+          backgroundImage: `url('/images/bg/36e0c1fe-b739-4bf2-9af5-a08d3ba1083e.png')`,
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
         }}></div>
       </div>
-      
-      {/* Classical Border Pattern */}
-      <div className="absolute top-0 left-0 right-0 h-2" style={{
-        backgroundImage: `linear-gradient(90deg, #fdf9f0 0%, #d4c17a 25%, #a8826b 50%, #d4c17a 75%, #fdf9f0 100%)`
-      }}></div>
       
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Main Footer Content */}
@@ -71,7 +68,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="space-y-6">
-            <div className="border-t border-b border-cream-400 px-4 py-2">
+            <div className="px-4 py-2">
               <h3 className="text-lg font-semibold text-cream-100 text-center uppercase tracking-wider">Quick Links</h3>
             </div>
             <ul className="space-y-3">
@@ -105,7 +102,7 @@ const Footer = () => {
 
           {/* Heritage & Collections */}
           <div className="space-y-6">
-            <div className="border-t border-b border-cream-400 px-4 py-2">
+            <div className="px-4 py-2">
               <h3 className="text-lg font-semibold text-cream-100 text-center uppercase tracking-wider">Heritage</h3>
             </div>
             <ul className="space-y-3">
@@ -135,7 +132,7 @@ const Footer = () => {
 
           {/* Contact Information */}
           <div className="space-y-6">
-            <div className="border-t border-b border-cream-400 px-4 py-2">
+            <div className="px-4 py-2">
               <h3 className="text-lg font-semibold text-cream-100 text-center uppercase tracking-wider">Contact</h3>
             </div>
             <div className="space-y-4">
@@ -171,30 +168,9 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Newsletter Signup */}
-        <div className="border-t-2 border-b-2 border-cream-400 pt-8 pb-8 mb-8">
-          <div className="max-w-lg mx-auto text-center">
-            <div className="border-t border-b border-cream-500 px-6 py-3 mb-6">
-              <h3 className="text-xl font-semibold text-cream-100 uppercase tracking-wider">Stay Connected</h3>
-            </div>
-            <p className="text-cream-300 text-sm mb-6 leading-relaxed">
-              Subscribe to our newsletter for updates on new collections and artisan stories.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 border border-cream-300 text-brown-900 placeholder-brown-500 text-sm focus:outline-none focus:border-cream-100 bg-cream-50"
-              />
-              <button className="bg-cream-300 text-brown-900 px-8 py-3 text-sm font-medium hover:bg-cream-100 transition-colors border border-cream-200">
-                Subscribe
-              </button>
-            </div>
-          </div>
-        </div>
 
         {/* Bottom Bar */}
-        <div className="border-t-2 border-cream-400 pt-8">
+        <div className="pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-center md:text-left">
               <p className="text-cream-400 text-sm font-medium">

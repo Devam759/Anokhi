@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import { MapPin, Clock, Award, Users } from 'lucide-react';
 
 const BrandHighlights = () => {
   return (
@@ -37,92 +36,68 @@ const BrandHighlights = () => {
           </div>
         </div>
 
-        {/* Traditional Heritage Timeline */}
+        {/* Simplified Heritage Journey */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-          {/* Left Side - Heritage Milestones */}
-          <div className="space-y-8">
-            <div className="relative">
-              <div className="border-l-4 border-brown-800 pl-8 space-y-8">
-                <div className="relative">
-                  <div className="absolute -left-6 top-0 w-8 h-8 bg-brown-800 rounded-full flex items-center justify-center">
-                    <span className="text-cream-50 font-bold text-sm">1970</span>
-                  </div>
-                  <div className="bg-white border-2 border-brown-300 p-6 shadow-lg">
-                    <h3 className="text-xl font-bold text-brown-900 mb-3">The Foundation</h3>
-                    <p className="text-brown-700 leading-relaxed">
-                      Anokhi was founded with a mission rooted in craft conservation and development through design and project funding.
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="relative">
-                  <div className="absolute -left-6 top-0 w-8 h-8 bg-brown-700 rounded-full flex items-center justify-center">
-                    <span className="text-cream-50 font-bold text-sm">1980s</span>
-                  </div>
-                  <div className="bg-white border-2 border-brown-300 p-6 shadow-lg">
-                    <h3 className="text-xl font-bold text-brown-900 mb-3">Design Studio Establishment</h3>
-                    <p className="text-brown-700 leading-relaxed">
-                      The spacious, verdant workplace on the outskirts of Jaipur became the heart of Anokhi's design studio.
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="relative">
-                  <div className="absolute -left-6 top-0 w-8 h-8 bg-brown-700 rounded-full flex items-center justify-center">
-                    <span className="text-cream-50 font-bold text-sm">1990s</span>
-                  </div>
-                  <div className="bg-white border-2 border-brown-300 p-6 shadow-lg">
-                    <h3 className="text-xl font-bold text-brown-900 mb-3">International Recognition</h3>
-                    <p className="text-brown-700 leading-relaxed">
-                      Anokhi's distinctive prints and quality gained recognition in stores and businesses across the globe.
-                    </p>
-                  </div>
-                </div>
+          {/* Left Side - Craft Heritage */}
+          <div className="space-y-6">
+            <h3 className="text-2xl font-bold text-brown-900 text-center border-b-2 border-brown-600 pb-2">
+              Traditional Craftsmanship
+            </h3>
+            
+             {/* Featured Image */}
+             <div className="relative">
+               <div 
+                 className="w-full h-64 bg-cover bg-center rounded-lg"
+                 style={{ backgroundImage: `url('/images/stage2.jpg')` }}
+               >
+               </div>
+             </div>
+
+            {/* Simple Grid */}
+            <div className="grid grid-cols-2 gap-4">
+              <div className="relative">
+                <div 
+                  className="h-32 bg-cover bg-center rounded-lg"
+                  style={{ backgroundImage: `url('/images/stage3.jpg')` }}
+                ></div>
+              </div>
+              
+              <div className="relative">
+                <div 
+                  className="h-32 bg-cover bg-center rounded-lg"
+                  style={{ backgroundImage: `url('/images/IMG_2224-800x600-1.jpg')` }}
+                ></div>
               </div>
             </div>
           </div>
 
-          {/* Right Side - Heritage Images Gallery */}
+          {/* Right Side - Artisan Stories */}
           <div className="space-y-6">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="relative group">
-                <div 
-                  className="w-full h-48 bg-cover bg-center border-2 border-brown-300 shadow-lg"
-                  style={{ backgroundImage: `url('/images/IMG_1164-600x800-1.jpg')` }}
-                >
-                  <div className="absolute inset-0 bg-brown-900/20 group-hover:bg-brown-900/10 transition-colors"></div>
-                </div>
-              </div>
-              <div className="relative group">
-                <div 
-                  className="w-full h-48 bg-cover bg-center border-2 border-brown-300 shadow-lg"
-                  style={{ backgroundImage: `url('/images/stage4.jpg')` }}
-                >
-                  <div className="absolute inset-0 bg-brown-900/20 group-hover:bg-brown-900/10 transition-colors"></div>
-                </div>
-              </div>
-              <div className="relative group">
-                <div 
-                  className="w-full h-48 bg-cover bg-center border-2 border-brown-300 shadow-lg"
-                  style={{ backgroundImage: `url('/images/stage5.jpg')` }}
-                >
-                  <div className="absolute inset-0 bg-brown-900/20 group-hover:bg-brown-900/10 transition-colors"></div>
-                </div>
-              </div>
-              <div className="relative group">
-                <div 
-                  className="w-full h-48 bg-cover bg-center border-2 border-brown-300 shadow-lg"
-                  style={{ backgroundImage: `url('/images/stage6.jpg')` }}
-                >
-                  <div className="absolute inset-0 bg-brown-900/20 group-hover:bg-brown-900/10 transition-colors"></div>
-                </div>
-              </div>
-            </div>
+            <h3 className="text-2xl font-bold text-brown-900 text-center border-b-2 border-brown-600 pb-2">
+              Master Artisans
+            </h3>
+            
+             {/* Artisan Feature - Slightly larger */}
+             <div className="bg-cream-50 p-6 rounded-lg">
+               <div className="text-center mb-5">
+                 <div 
+                   className="w-32 h-36 bg-cover bg-center border-2 border-brown-600 rounded-full mx-auto mb-5"
+                   style={{ backgroundImage: `url('/images/image.jpg')` }}
+                 ></div>
+                 <h4 className="text-xl font-bold text-brown-900">Mahesh ji - Master Patwa</h4>
+                 <p className="text-base text-brown-700">Master Threadwork Artisan</p>
+               </div>
+               
+               <p className="text-brown-800 text-base leading-relaxed text-center">
+                 A highly-skilled patwa specializing in traditional threadwork, mastering decorative finishes like fundas (tassels), nadas (cords) and intricate beadwork, preserving ancient techniques passed down through family generations.
+               </p>
+             </div>
+
           </div>
         </div>
 
         {/* Traditional Craftsmanship Process */}
-        <div className="bg-white border-2 border-brown-300 p-8 mb-12">
+        {/* <div className="bg-white border-2 border-brown-300 p-8 mb-12">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-brown-900 mb-4">Traditional Craftsmanship Process</h3>
             <div className="w-20 h-1 bg-brown-600 mx-auto"></div>
@@ -151,10 +126,10 @@ const BrandHighlights = () => {
               <p className="text-brown-700 text-sm">Eco-friendly natural dyeing process using organic materials</p>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Heritage Statistics */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           <div className="text-center bg-white border-2 border-brown-300 p-6">
             <div className="w-16 h-16 bg-brown-800 rounded-full flex items-center justify-center mx-auto mb-4">
               <Clock size={24} className="text-white" />
@@ -176,7 +151,7 @@ const BrandHighlights = () => {
             <div className="text-3xl font-bold text-brown-900 mb-2">100+</div>
             <div className="text-brown-700 font-medium">Master Artisans</div>
           </div>
-        </div>
+        </div> */}
 
         {/* Traditional Quote Section */}
         <div className="text-center py-12 bg-brown-100 border-2 border-brown-300 relative">

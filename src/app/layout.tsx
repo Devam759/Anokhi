@@ -67,7 +67,7 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body className="antialiased">
-        <main className="pb-20">{children}</main>
+        <main>{children}</main>
         <Header />
       </body>
     </html>

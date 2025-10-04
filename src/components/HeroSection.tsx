@@ -1,8 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { ArrowRight, Play } from 'lucide-react';
+import { useState } from 'react';
+import Image from 'next/image';
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -10,7 +9,7 @@ const HeroSection = () => {
   const heroSlides = [
     {
       id: 1,
-      image: '/images/stage3.jpg',
+      image: '/images/20091116-AnokhiJaipur11.jpg',
       title: 'Natural Dyeing Process',
       subtitle: 'Using organic materials and traditional methods for vibrant, lasting colors',
       cta: 'Learn More'
@@ -38,12 +37,7 @@ const HeroSection = () => {
     }
   ];
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, [heroSlides.length]);
+  // Removed auto-scroll - images now only change on manual navigation
 
   return (
     <section id="hero" className="py-20 px-4 bg-beige-50 relative overflow-hidden">
@@ -65,60 +59,121 @@ const HeroSection = () => {
               Craft Conservation Since 1970
             </h5>
           </div>
-          <h1 className="text-2xl md:text-3xl font-semibold text-brown-900 mb-6 leading-relaxed">
-            {heroSlides[currentSlide].title}
-          </h1>
-          <div className="max-w-3xl mx-auto">
-            <p className="text-base text-brown-800 leading-relaxed mb-6">
-              {heroSlides[currentSlide].subtitle}
-            </p>
-            <div className="w-16 h-px bg-brown-600 mx-auto mb-8"></div>
+        </div>
+
+        {/* Center-Focused Image Carousel with Side Previews */}
+        <div className="relative overflow-hidden bg-brown-100 rounded-lg">
+          <div 
+            className="flex transition-transform duration-1000 ease-in-out"
+            style={{ 
+              transform: `translateX(-${currentSlide * 100}%)`
+            }}
+          >
+            {heroSlides.map((slide, index) => (
+              <div
+                key={slide.id}
+                className="flex-shrink-0 w-full relative"
+              >
+                <div className="relative w-full h-64">
+                  <Image
+                    src={slide.image}
+                    alt={`Heritage image ${index + 1}`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    priority={index === 0}
+                  />
+                  <div className="absolute inset-0 bg-brown-900/10"></div>
+                </div>
+              </div>
+            ))}
           </div>
           
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Link
-              href="/shops"
-              className="bg-brown-700 hover:bg-brown-800 text-cream-50 px-6 py-2 border border-brown-600 inline-flex items-center group transition-all duration-300 text-sm font-medium"
-            >
-              {heroSlides[currentSlide].cta}
-              <ArrowRight size={16} className="ml-1 group-hover:translate-x-1 transition-transform" />
-            </Link>
-            <Link
-              href="/about"
-              className="bg-transparent hover:bg-brown-700 text-brown-700 hover:text-cream-50 border border-brown-600 hover:border-brown-800 px-6 py-2 inline-flex items-center group transition-all duration-300 text-sm font-medium"
-            >
-              <Play size={16} className="mr-1 group-hover:scale-110 transition-transform" />
-              Our Story
-            </Link>
+          {/* Navigation Dots */}
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+            {heroSlides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === currentSlide 
+                    ? 'bg-cream-100 scale-125' 
+                    : 'bg-brown-600 hover:bg-brown-400'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
           </div>
         </div>
 
-        {/* Classical Image Showcase */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {heroSlides.map((slide, index) => (
-            <div
-              key={slide.id}
-              className={`relative transition-all duration-1000 ${
-                index === currentSlide ? 'opacity-100' : 'opacity-60'
-              }`}
+        {/* Traditional Heritage Text Section */}
+        <div className="mt-16 text-center">
+          {/* Main Heritage Title */}
+          <div className="mb-8">
+            <h1 
+              className="text-5xl md:text-6xl font-bold mb-4 leading-tight"
+              style={{ 
+                fontFamily: 'Cinzel, serif',
+                color: '#8B4513', // Maroon color
+                textShadow: '2px 2px 4px rgba(0,0,0,0.1)'
+              }}
             >
-              <div 
-                className="w-full h-32 bg-cover bg-center bg-no-repeat border border-brown-200"
-                style={{ backgroundImage: `url(${slide.image})` }}
-              >
-                <div className="absolute inset-0 bg-brown-900/10"></div>
-              </div>
+              {/* ANOKHI */}
+            </h1>
+            <div 
+              className="text-2xl md:text-3xl font-medium mb-6"
+              style={{ 
+                fontFamily: 'Libre Baskerville, serif',
+                color: '#B8860B', // Gold color
+                fontWeight: '400'
+              }}
+            >
+              Handcrafted Heritage, Timeless Design
             </div>
-          ))}
+          </div>
+
+          {/* Ornamental Border */}
+          <div className="flex justify-center items-center mb-8">
+            <div className="w-16 h-px" style={{ backgroundColor: '#B8860B' }}></div>
+            <div className="mx-4 text-2xl" style={{ color: '#8B4513' }}>◆</div>
+            <div className="w-16 h-px" style={{ backgroundColor: '#B8860B' }}></div>
+          </div>
+
+          {/* Heritage Description */}
+          <div className="max-w-4xl mx-auto">
+            <p 
+              className="text-lg md:text-xl leading-relaxed mb-6"
+              style={{ 
+                fontFamily: 'Libre Baskerville, serif',
+                color: '#654321', // Dark brown
+                lineHeight: '1.8'
+              }}
+            >
+              For over five decades, Anokhi has been preserving traditional Indian textile arts while embracing contemporary design sensibilities. Our commitment to craft conservation and sustainable practices creates a bridge between heritage and innovation.
+            </p>
+            
+            <p 
+              className="text-base md:text-lg"
+              style={{ 
+                fontFamily: 'Libre Baskerville, serif',
+                color: '#8B4513', // Maroon
+                fontStyle: 'italic'
+              }}
+            >
+              "Distinguished by its prints, silhouettes and product quality, Anokhi aspires to be an alternative role model for good business practices and the ongoing revival of traditional skills."
+            </p>
+          </div>
+
+          {/* Decorative Bottom Border */}
+          <div className="mt-12 flex justify-center">
+            <div className="flex space-x-2">
+              <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#B8860B' }}></div>
+              <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#8B4513' }}></div>
+              <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#B8860B' }}></div>
+            </div>
+          </div>
         </div>
 
-        {/* Classical Description */}
-        <div className="text-center mt-8 py-6 bg-brown-50 border-t border-b border-brown-200">
-          <p className="text-sm text-brown-800 max-w-2xl mx-auto leading-relaxed">
-            Distinguished by its prints, silhouettes and product quality, Anokhi aspires to be an alternative role model for good business practices and the ongoing revival of traditional skills.
-          </p>
-        </div>
       </div>
     </section>
   );

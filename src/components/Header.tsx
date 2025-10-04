@@ -9,16 +9,16 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigation = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Shops', href: '/shops' },
-    { name: 'Museum', href: '/museum' },
-    { name: 'Café', href: '/cafe' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'HOME', href: '/' },
+    { name: 'ABOUT', href: '/about' },
+    { name: 'SHOPS', href: '/shops' },
+    { name: 'MUSEUM', href: '/museum' },
+    { name: 'CAFÉ', href: '/cafe' },
+    { name: 'CONTACT', href: '/contact' },
   ];
 
   return (
-    <header className="fixed bottom-0 left-0 right-0 z-40 bg-beige-100 border-t border-brown-300 shadow-lg">
+    <header className="fixed top-0 left-0 right-0 z-40 bg-beige-100 border-b border-brown-300 shadow-lg">
       <nav className="max-w-4xl mx-auto py-3 px-4">
         <div className="flex items-center justify-between">
           {/* Left Navigation */}
@@ -27,10 +27,18 @@ const Header = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-brown-800 hover:text-brown-900 font-medium transition-colors duration-300 text-sm relative group"
+                className="font-bold transition-colors duration-300 text-sm relative group uppercase tracking-wide"
+                style={{ 
+                  color: '#8B4513',
+                  fontFamily: 'Cinzel, serif',
+                  fontWeight: '600',
+                  letterSpacing: '0.1em'
+                }}
+                 onMouseEnter={(e) => (e.target as HTMLElement).style.color = '#A0522D'}
+                 onMouseLeave={(e) => (e.target as HTMLElement).style.color = '#8B4513'}
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brown-900 transition-all duration-300 group-hover:w-full"></span>
+                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full" style={{ backgroundColor: '#A0522D' }}></span>
               </Link>
             ))}
           </div>
@@ -55,10 +63,18 @@ const Header = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-brown-800 hover:text-brown-900 font-medium transition-colors duration-300 text-sm relative group"
+                className="font-bold transition-colors duration-300 text-sm relative group uppercase tracking-wide"
+                style={{ 
+                  color: '#8B4513',
+                  fontFamily: 'Cinzel, serif',
+                  fontWeight: '600',
+                  letterSpacing: '0.1em'
+                }}
+                 onMouseEnter={(e) => (e.target as HTMLElement).style.color = '#A0522D'}
+                 onMouseLeave={(e) => (e.target as HTMLElement).style.color = '#8B4513'}
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brown-900 transition-all duration-300 group-hover:w-full"></span>
+                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full" style={{ backgroundColor: '#A0522D' }}></span>
               </Link>
             ))}
           </div>
@@ -66,7 +82,14 @@ const Header = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-1 text-brown-800 hover:text-brown-900 transition-colors duration-300"
+            className="md:hidden p-1 transition-colors duration-300"
+            style={{ 
+              color: '#8B4513',
+              fontFamily: 'Cinzel, serif',
+              fontWeight: '600'
+            }}
+                 onMouseEnter={(e) => (e.target as HTMLElement).style.color = '#A0522D'}
+                 onMouseLeave={(e) => (e.target as HTMLElement).style.color = '#8B4513'}
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -81,7 +104,15 @@ const Header = () => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-brown-800 hover:text-brown-900 font-medium transition-colors duration-300 py-2 px-4 text-sm text-center"
+                  className="font-bold transition-colors duration-300 py-2 px-4 text-sm text-center uppercase tracking-wide"
+                  style={{ 
+                    color: '#8B4513',
+                    fontFamily: 'Cinzel, serif',
+                    fontWeight: '600',
+                    letterSpacing: '0.1em'
+                  }}
+                   onMouseEnter={(e) => (e.target as HTMLElement).style.color = '#A0522D'}
+                   onMouseLeave={(e) => (e.target as HTMLElement).style.color = '#8B4513'}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}

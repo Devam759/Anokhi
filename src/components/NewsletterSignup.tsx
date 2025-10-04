@@ -81,10 +81,10 @@ const NewsletterSignup = () => {
                   border: '1px solid #a18072'
                 }}
                 onMouseEnter={(e) => {
-                  e.target.style.backgroundColor = '#f3ede7';
+                  (e.target as HTMLElement).style.backgroundColor = '#f3ede7';
                 }}
                 onMouseLeave={(e) => {
-                  e.target.style.backgroundColor = '#fdf9f0';
+                  (e.target as HTMLElement).style.backgroundColor = '#fdf9f0';
                 }}
               >
                 {isLoading ? 'Subscribing...' : 'Subscribe'}
