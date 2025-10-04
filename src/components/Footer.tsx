@@ -8,12 +8,17 @@ const Footer = () => {
     <footer className="relative py-16 px-4 overflow-hidden" style={{ backgroundColor: '#3d2f1a' }}>
       {/* Background Image */}
       <div className="absolute inset-0 opacity-15">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url('/images/bg/36e0c1fe-b739-4bf2-9af5-a08d3ba1083e.png')`,
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
-        }}></div>
+        <div 
+          className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-full h-full"
+          style={{
+            backgroundImage: `url('/images/bg/36e0c1fe-b739-4bf2-9af5-a08d3ba1083e.png')`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'contain',
+            backgroundPosition: 'center bottom',
+            maxHeight: '100vh',
+            maxWidth: '100vw'
+          }}
+        ></div>
       </div>
       
       <div className="max-w-6xl mx-auto relative z-10">

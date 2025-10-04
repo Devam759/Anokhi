@@ -16,6 +16,11 @@ export const metadata: Metadata = {
     telephone: false,
   },
   metadataBase: new URL('https://anokhi.com'),
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/favicon.ico',
+  },
+  manifest: '/manifest.json',
   openGraph: {
     title: "Anokhi - Handcrafted Heritage, Timeless Design",
     description: "A celebration of traditional craftsmanship and contemporary design, bringing together the rich heritage of handcrafted textiles with modern lifestyle products.",
@@ -61,14 +66,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <head>
-        <link rel="canonical" href="https://anokhi.com" />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="manifest" href="/manifest.json" />
-      </head>
       <body className="antialiased">
-        <main>{children}</main>
         <Header />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
