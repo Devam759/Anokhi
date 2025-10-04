@@ -77,6 +77,7 @@ const MuseumExhibits = () => {
                 <button
                   onClick={prevExhibit}
                   className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                  aria-label="Previous exhibit"
                 >
                   <ChevronLeft size={20} className="text-earth-600" />
                 </button>
@@ -91,6 +92,7 @@ const MuseumExhibits = () => {
                           ? 'bg-terracotta-600 scale-125' 
                           : 'bg-earth-300 hover:bg-earth-400'
                       }`}
+                      aria-label={`View exhibit ${index + 1}`}
                     />
                   ))}
                 </div>
@@ -98,6 +100,7 @@ const MuseumExhibits = () => {
                 <button
                   onClick={nextExhibit}
                   className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                  aria-label="Next exhibit"
                 >
                   <ChevronRight size={20} className="text-earth-600" />
                 </button>

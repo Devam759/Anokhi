@@ -95,12 +95,14 @@ const CafeMenu = () => {
               <button
                 onClick={prevCategory}
                 className="w-12 h-12 bg-earth-100 rounded-full flex items-center justify-center hover:bg-earth-200 transition-colors"
+                aria-label="Previous category"
               >
                 <ChevronLeft size={20} className="text-earth-600" />
               </button>
               <button
                 onClick={nextCategory}
                 className="w-12 h-12 bg-earth-100 rounded-full flex items-center justify-center hover:bg-earth-200 transition-colors"
+                aria-label="Next category"
               >
                 <ChevronRight size={20} className="text-earth-600" />
               </button>

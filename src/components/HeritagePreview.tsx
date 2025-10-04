@@ -26,7 +26,7 @@ const HeritagePreview = () => {
           </div>
           <div className="max-w-4xl mx-auto">
             <p className="text-lg text-brown-800 leading-relaxed mb-8">
-              A journey through five decades of preserving traditional Indian textile arts and contemporary design excellence.
+    
             </p>
             <div className="flex justify-center items-center space-x-6">
               <div className="w-20 h-px bg-brown-600"></div>

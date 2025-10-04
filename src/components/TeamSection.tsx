@@ -81,18 +81,21 @@ const TeamSection = () => {
                   <a
                     href={member.social.instagram}
                     className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-terracotta-50 transition-colors"
+                    aria-label={`${member.name} Instagram`}
                   >
                     <Instagram size={14} className="text-earth-600" />
                   </a>
                   <a
                     href={member.social.twitter}
                     className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-terracotta-50 transition-colors"
+                    aria-label={`${member.name} Twitter`}
                   >
                     <Twitter size={14} className="text-earth-600" />
                   </a>
                   <a
                     href={member.social.linkedin}
                     className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-terracotta-50 transition-colors"
+                    aria-label={`${member.name} LinkedIn`}
                   >
                     <Linkedin size={14} className="text-earth-600" />
                   </a>

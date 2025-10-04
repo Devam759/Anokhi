@@ -64,7 +64,6 @@ export default function RootLayout({
       <head>
         <link rel="canonical" href="https://anokhi.com" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body className="antialiased">
