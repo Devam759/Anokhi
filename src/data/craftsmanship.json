@@ -1,0 +1,45 @@
+{
+  "title": "Craftsmanship & ANOKHI",
+  "description": "For decades, ANOKHI has drawn inspiration from Rajasthan's rich craft heritage and collaborates with local artisans across a spectrum of traditional techniques. An interdependence of different hand skills is almost always needed to create an original ANOKHI piece.",
+  "techniques": [
+    {
+      "id": "block-carving",
+      "title": "Block Carving",
+      "description": "Hand Block Carving is the first stage in the development of printed textiles. It lays the foundation for any hand printing, and therefore also underlies the basis of any later handicraft work incorporated in printed pieces, such as tassels or embroidery, making it an especially fundamental craft.",
+      "process": "Wooden blocks are first planed and sanded for a smooth finish then whitened with a chalk paste to allow for tracing of the design. Working without the aid of any electrical machinery, carvers only use traditional hand tools, so intricate blocks such as this can take six days or longer to complete.",
+      "image": "/images/stage4.jpg",
+      "icon": "🔨"
+    },
+    {
+      "id": "patwa-work",
+      "title": "Patwa Work",
+      "description": "Mahesh ji is a highly-skilled patwa – an artisan specialising in threadwork. Taught by the elders of his family, he has mastered a variety of decorative finishes such as fundas (tassels), nadas (cords) and beadwork.",
+      "process": "Traditional threadwork techniques passed down through generations, creating intricate decorative elements that enhance the beauty of Anokhi pieces.",
+      "image": "/images/stage5.jpg",
+      "icon": "🧵"
+    },
+    {
+      "id": "gold-silver-print",
+      "title": "Gold & Silver Print",
+      "description": "Gold & silver printing is an embellishment frequently used on traditional Indian fabric. Originally artisans painted or printed a pattern with 'roghan' gum paste then applied 'varak' gold or silver leaf, however few artisans still practice this method of application.",
+      "process": "Today gold & silver printing requires the use of a brass tube with a stenciled base & metal plunger. The plunger is filled with paste & depressed, forcing a measured amount through the stencil onto the fabric. Using a muslin pouch, metallic powder is then dusted over the cloth to coat the design.",
+      "image": "/images/stage6.jpg",
+      "icon": "✨"
+    }
+  ],
+  "artisans": [
+    {
+      "name": "Mahesh ji",
+      "specialty": "Patwa Work",
+      "description": "A highly-skilled patwa artisan specializing in threadwork, taught by the elders of his family.",
+      "image": "/images/stage7.jpg"
+    }
+  ],
+  "collaborators": [
+    "Wood and brass block carvers",
+    "Block printers and dyers",
+    "Quilters",
+    "Embroiderers",
+    "Khari printers"
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "timeline": [
+    {
+      "year": "1970",
+      "title": "The Foundation",
+      "description": "Anokhi was founded with a mission rooted in craft conservation and development through design and project funding.",
+        "image": "/images/stage2.jpg"
+    },
+    {
+      "year": "1980s",
+      "title": "Design Studio Establishment",
+      "description": "The spacious, verdant workplace on the outskirts of Jaipur became the heart of Anokhi's design studio and craft development.",
+        "image": "/images/stage3.jpg"
+    },
+    {
+      "year": "1990s",
+      "title": "International Recognition",
+      "description": "Anokhi's distinctive prints, silhouettes and product quality gained recognition in small stores and online businesses across the globe.",
+        "image": "/images/stage4.jpg"
+    },
+    {
+      "year": "2000s",
+      "title": "Archive Development",
+      "description": "The ANOKHI archive of swatches, paper patterns, toiles and samples grew to span over decades of creativity and craft industry collaboration.",
+        "image": "/images/stage5.jpg"
+    },
+    {
+      "year": "2010s",
+      "title": "Craft Conservation Focus",
+      "description": "Anokhi became an alternative role model for good business practices and the ongoing revival of traditional skills.",
+        "image": "/images/stage6.jpg"
+    },
+    {
+      "year": "2024",
+      "title": "54 Years of Heritage",
+      "description": "Continuing the legacy of craft conservation through design, maintaining quality and constancy through personalized in-store experiences.",
+        "image": "/images/stage7.jpg"
+    }
+  ],
+  "craftsmanship": {
+    "title": "The Art of Hand-Block Printing",
+    "description": "Our textiles are created using traditional hand-block printing techniques passed down through generations of skilled artisans.",
+    "process": [
+      {
+        "step": "Design Creation",
+        "description": "Each design begins as a hand-drawn pattern, carefully crafted by our design team in collaboration with master artisans."
+      },
+      {
+        "step": "Block Carving",
+        "description": "Master craftsmen carve intricate designs into wooden blocks, each one unique and handcrafted with precision."
+      },
+      {
+        "step": "Natural Dyeing",
+        "description": "We use only natural, eco-friendly dyes derived from plants, minerals, and other organic sources."
+      },
+      {
+        "step": "Hand Printing",
+        "description": "Artisans hand-print each piece using traditional techniques, ensuring every item is unique and authentic."
+      },
+      {
+        "step": "Quality Control",
+        "description": "Each finished piece undergoes rigorous quality checks to ensure it meets our high standards."
+      }
+    ]
+  }
+}

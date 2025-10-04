@@ -1,0 +1,23 @@
+[
+  {
+    "id": "jaipur-farm",
+    "name": "ANOKHI Jaipur",
+    "location": "Jaipur, Rajasthan",
+    "address": "Anokhi Farm, Todi Ramzanipura, Jagatpura, Jaipur 302017, INDIA",
+    "coordinates": {
+      "lat": 26.9854,
+      "lng": 75.8513
+    },
+    "hours": {
+      "monday": "10:00 AM - 6:00 PM",
+      "tuesday": "10:00 AM - 6:00 PM",
+      "wednesday": "10:00 AM - 6:00 PM",
+      "thursday": "10:00 AM - 6:00 PM",
+      "friday": "10:00 AM - 6:00 PM",
+      "saturday": "10:00 AM - 6:00 PM",
+      "sunday": "10:00 AM - 6:00 PM"
+    },
+    "phone": "+91-141-4225100",
+    "description": "Our flagship location at Anokhi Farm, featuring the complete collection of handcrafted textiles and the renowned design studio in our spacious, verdant workplace."
+  }
+]
