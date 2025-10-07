@@ -1,143 +1,210 @@
+'use client';
+
+import { useState } from 'react';
 import { MapPin, Clock, Phone, ExternalLink } from 'lucide-react';
-import shopsData from '@/data/shops.json';
+import Image from "next/image";
+import { shopsData } from '@/data/shops';
+
+// Extract unique cities from shops data
+const getUniqueCities = (): string[] => {
+  const cities = new Set<string>();
+  shopsData.forEach(shop => {
+    // Extract city name from location (before comma)
+    const cityName = shop.location.split(',')[0].trim();
+    cities.add(cityName);
+  });
+  return Array.from(cities).sort();
+};
+
+// Get shops for a specific city
+const getShopsByCity = (cityName: string) => {
+  return shopsData.filter(shop => shop.location.split(',')[0].trim() === cityName);
+};
 
 const ShopsDirectory = () => {
+  const [selectedCity, setSelectedCity] = useState<string | null>(null);
+  const cities = getUniqueCities();
 
   return (
-    <section className="section-padding bg-white">
-      <div className="container-max">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-serif font-bold text-earth-900 mb-6">
-            Our Shops
-          </h1>
-          <p className="text-xl text-earth-600 max-w-3xl mx-auto leading-relaxed">
-            Visit our beautiful retail locations to experience the full range of our handcrafted textiles, 
-            lifestyle products, and heritage collections in person.
-          </p>
-        </div>
+    <div className="flex flex-col md:flex-row min-h-screen bg-[#faf9f5] text-[#222] p-6 md:p-8 lg:p-12">
+      {/* Sidebar */}
+      <aside className="w-full md:w-1/4 lg:w-1/5 bg-[#f5f3ee] border-r border-gray-200 p-6 rounded-l-lg">
+        <h2 className="text-lg font-semibold mb-4 text-[#8b5e3b]">Anokhi Stores</h2>
+        <ul className="space-y-2 text-sm">
+          {cities.map((city) => {
+            const cityShops = getShopsByCity(city);
+            const isSelected = selectedCity === city;
+            
+            return (
+              <li 
+                key={city} 
+                onClick={() => setSelectedCity(city)}
+                className={`hover:text-[#8b5e3b] cursor-pointer transition-colors duration-200 py-1 ${
+                  isSelected ? 'text-[#8b5e3b] font-medium' : ''
+                }`}
+              >
+                {city} {cityShops.length > 1 ? '+' : ''}
+              </li>
+            );
+          })}
+        </ul>
+      </aside>
 
-        {/* Shops Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-          {shopsData.map((shop) => (
-            <div
-              key={shop.id}
-              className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-earth-100 overflow-hidden"
-            >
-              {/* Shop Image Placeholder */}
-              <div className="aspect-video bg-gradient-to-br from-terracotta-100 to-sage-100 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                    <span className="text-2xl font-bold text-terracotta-600">
-                      {shop.name.charAt(0)}
-                    </span>
-                  </div>
-                  <span className="text-earth-400 font-medium">Shop Image</span>
-                </div>
-              </div>
+      {/* Main Content */}
+      <main className="flex-1 p-8 md:p-10 lg:p-12 bg-white rounded-r-lg shadow-sm">
+        <h1 className="text-3xl font-bold mb-4 border-b pb-2 text-[#8b5e3b]">Our Shops</h1>
+        
+        {selectedCity ? (
+          <div>
+            <div className="text-[17px] leading-8 space-y-5 mb-10">
+              <p>
+                Discover our {selectedCity} locations and experience the full range of our handcrafted textiles, 
+                lifestyle products, and heritage collections.
+              </p>
+            </div>
 
-              {/* Shop Details */}
-              <div className="p-8">
-                <div className="flex items-start justify-between mb-4">
-                  <h3 className="text-2xl font-serif font-bold text-earth-900 group-hover:text-terracotta-600 transition-colors">
-                    {shop.name}
-                  </h3>
-                  <span className="bg-terracotta-100 text-terracotta-700 px-3 py-1 rounded-full text-sm font-medium">
-                    {shop.location}
-                  </span>
-                </div>
+            {/* Store Details */}
+            <div className="space-y-8">
+              {getShopsByCity(selectedCity).map((shop) => (
+                <div key={shop.id} className="border-t pt-8">
+                  <div className="bg-white rounded-lg shadow-md overflow-hidden">
+                    {/* Shop Image */}
+                    <div className="h-48 bg-gradient-to-br from-[#f5f3ee] to-[#faf9f5] flex items-center justify-center">
+                      <div className="text-center">
+                        <div className="w-16 h-16 bg-[#8b5e3b] rounded-full flex items-center justify-center mx-auto mb-3 shadow-lg">
+                          <span className="text-xl font-bold text-white">
+                            {shop.name.charAt(0)}
+                          </span>
+                        </div>
+                        <span className="text-[#8b5e3b] font-medium text-sm">Shop Image</span>
+                      </div>
+                    </div>
 
-                <p className="text-earth-600 mb-6 leading-relaxed">
-                  {shop.description}
-                </p>
+                    {/* Shop Details */}
+                    <div className="p-8">
+                      {/* Shop Header with Heritage Styling */}
+                      <div className="text-center mb-8 pb-6 border-b border-[#f5f3ee]">
+                        <h3 className="text-2xl font-serif font-bold text-[#8b5e3b] mb-3">
+                          {shop.name}
+                        </h3>
+                        <div className="inline-block border-t border-b border-[#8b5e3b] px-4 py-1 mb-3">
+                          <p className="text-sm text-[#8b5e3b] uppercase tracking-wider font-medium">
+                            {shop.location}
+                          </p>
+                        </div>
+                        <p className="text-[17px] leading-8 text-[#666] max-w-2xl mx-auto">
+                          {shop.description}
+                        </p>
+                      </div>
 
-                {/* Contact Info */}
-                <div className="space-y-4 mb-6">
-                  <div className="flex items-start space-x-3">
-                    <MapPin size={18} className="text-terracotta-600 mt-1 flex-shrink-0" />
-                    <span className="text-earth-700 text-sm">{shop.address}</span>
-                  </div>
-                  
-                  <div className="flex items-center space-x-3">
-                    <Clock size={18} className="text-terracotta-600 flex-shrink-0" />
-                    <div className="text-earth-700 text-sm">
-                      <div className="font-medium mb-1">Store Hours:</div>
-                      <div className="text-xs text-earth-600">
-                        Mon-Fri: {shop.hours.monday}<br />
-                        Sat-Sun: {shop.hours.saturday}
+                      {/* Contact Info with Heritage Cards */}
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                        <div className="bg-[#faf9f5] rounded-lg px-8 py-4 border border-[#f5f3ee]">
+                          <div className="flex items-start space-x-3">
+                            <div className="w-10 h-10 bg-[#8b5e3b] rounded-full flex items-center justify-center flex-shrink-0">
+                              <MapPin size={16} className="text-white" />
+                            </div>
+                            <div>
+                              <h4 className="font-serif font-bold text-[#8b5e3b] mb-1 text-base">Address</h4>
+                              <p className="text-sm leading-5 text-[#666]">{shop.address}</p>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div className="bg-[#faf9f5] rounded-lg px-8 py-4 border border-[#f5f3ee]">
+                          <div className="flex items-start space-x-3">
+                            <div className="w-10 h-10 bg-[#8b5e3b] rounded-full flex items-center justify-center flex-shrink-0">
+                              <Clock size={16} className="text-white" />
+                            </div>
+                            <div>
+                              <h4 className="font-serif font-bold text-[#8b5e3b] mb-1 text-base">Store Hours</h4>
+                              <div className="text-sm leading-5 text-[#666] space-y-0.5">
+                                <div>Mon-Fri: {shop.hours.monday}</div>
+                                <div>Sat-Sun: {shop.hours.saturday}</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Contact Card */}
+                      <div className="bg-[#faf9f5] rounded-lg px-8 py-4 border border-[#f5f3ee] mb-6">
+                        <div className="flex items-start space-x-3">
+                          <div className="w-10 h-10 bg-[#8b5e3b] rounded-full flex items-center justify-center flex-shrink-0">
+                            <Phone size={16} className="text-white" />
+                          </div>
+                          <div>
+                            <h4 className="font-serif font-bold text-[#8b5e3b] mb-1 text-base">Contact</h4>
+                            <a
+                              href={`tel:${shop.phone}`}
+                              className="text-sm text-[#8b5e3b] hover:text-[#7a4f32] transition-colors font-medium"
+                            >
+                              {shop.phone}
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Action Buttons with Heritage Styling */}
+                      <div className="flex flex-col sm:flex-row gap-4">
+                        <a
+                          href={`https://maps.google.com/?q=${encodeURIComponent(shop.address)}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 bg-[#8b5e3b] text-white px-8 py-4 rounded-lg text-center hover:bg-[#7a4f32] transition-colors duration-200 flex items-center justify-center group font-medium text-[17px] shadow-lg hover:shadow-xl"
+                        >
+                          <MapPin size={20} className="mr-3" />
+                          Get Directions
+                          <ExternalLink size={18} className="ml-3 group-hover:translate-x-1 transition-transform" />
+                        </a>
+                        
+                        <a
+                          href={`tel:${shop.phone}`}
+                          className="flex-1 border-2 border-[#8b5e3b] text-[#8b5e3b] px-8 py-4 rounded-lg text-center hover:bg-[#8b5e3b] hover:text-white transition-colors duration-200 flex items-center justify-center font-medium text-[17px] hover:shadow-lg"
+                        >
+                          <Phone size={20} className="mr-3" />
+                          Call Now
+                        </a>
                       </div>
                     </div>
                   </div>
-                  
-                  <div className="flex items-center space-x-3">
-                    <Phone size={18} className="text-terracotta-600 flex-shrink-0" />
-                    <a
-                      href={`tel:${shop.phone}`}
-                      className="text-earth-700 hover:text-terracotta-600 transition-colors text-sm"
-                    >
-                      {shop.phone}
-                    </a>
-                  </div>
                 </div>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <div>
+            <div className="text-[17px] leading-8 space-y-5 mb-10">
+              <p>
+                There are 25 ANOKHI shops located in towns and cities throughout
+                India. Most of our shops carry the full ANOKHI range of items. A
+                wider assortment of our hand-crafted womenswear, menswear and
+                childrenswear – as well as sleepwear, soft furnishings and
+                accessories – is available in the larger shops.
+              </p>
+              <p>
+                The small shop at the <em>Anokhi Museum of Hand Printing</em> (AMHP)
+                carries different items to the ANOKHI shops. Stock includes
+                limited-edition textile pieces, craft publications and yardage of
+                traditional block-prints relating to the exhibits.
+              </p>
+            </div>
 
-                {/* Action Buttons */}
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <a
-                    href={`https://maps.google.com/?q=${encodeURIComponent(shop.address)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary text-center flex items-center justify-center group"
-                  >
-                    <MapPin size={18} className="mr-2" />
-                    Get Directions
-                    <ExternalLink size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
-                  </a>
-                  
-                  <a
-                    href={`tel:${shop.phone}`}
-                    className="btn-secondary text-center flex items-center justify-center"
-                  >
-                    <Phone size={18} className="mr-2" />
-                    Call Now
-                  </a>
+            {/* Image Section */}
+            <div className="border-t pt-8">
+              <div className="aspect-video bg-gradient-to-br from-[#f5f3ee] to-[#faf9f5] rounded-lg shadow-md flex items-center justify-center">
+                <div className="text-center">
+                  <div className="w-32 h-32 bg-[#8b5e3b] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                    <span className="text-4xl font-bold text-white">A</span>
+                  </div>
+                  <span className="text-[#8b5e3b] font-medium text-lg">Anokhi Store Interior</span>
                 </div>
               </div>
             </div>
-          ))}
-        </div>
-
-        {/* Additional Info */}
-        <div className="bg-earth-50 rounded-3xl p-12 text-center">
-          <h2 className="text-3xl font-serif font-bold text-earth-900 mb-6">
-            Can't Visit Our Shops?
-          </h2>
-          <p className="text-xl text-earth-600 mb-8 max-w-3xl mx-auto">
-            While we encourage you to visit our physical locations to experience our products in person, 
-            we also offer online consultations and virtual shopping experiences.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/contact"
-              className="btn-primary inline-flex items-center group"
-            >
-              Schedule Virtual Tour
-              <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
-            <a
-              href="/contact"
-              className="btn-secondary inline-flex items-center group"
-            >
-              Contact Us
-              <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
           </div>
-        </div>
-      </div>
-    </section>
+        )}
+      </main>
+    </div>
   );
 };
 

@@ -21,13 +21,13 @@ const Footer = () => {
         ></div>
       </div>
       
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-4xl mx-auto relative z-10">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="text-center mb-12">
           {/* Brand Information */}
           <div className="space-y-6">
-            <Link href="/" className="group">
-              <div className="w-32 h-12 flex items-center justify-center mb-4">
+            <Link href="/" className="group inline-block">
+              <div className="w-32 h-12 flex items-center justify-center mb-6 mx-auto">
                 <Image
                   src="/anokhi logo.png"
                   alt="Anokhi Logo"
@@ -37,10 +37,10 @@ const Footer = () => {
                 />
               </div>
             </Link>
-            <p className="text-cream-200 leading-relaxed text-sm">
+            <p className="text-cream-200 leading-relaxed text-sm max-w-2xl mx-auto">
               Founded in 1970, Anokhi's ethos is rooted in craft conservation and development through design and project funding.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex justify-center space-x-6">
               <a
                 href={brandData.socialMedia.instagram}
                 target="_blank"
@@ -70,107 +70,6 @@ const Footer = () => {
               </a>
             </div>
           </div>
-
-          {/* Quick Links */}
-          <div className="space-y-6">
-            <div className="px-4 py-2">
-              <h3 className="text-lg font-semibold text-cream-100 text-center uppercase tracking-wider">Quick Links</h3>
-            </div>
-            <ul className="space-y-3">
-              <li>
-                <Link href="/about" className="text-cream-300 hover:text-cream-100 transition-colors text-sm">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/shops" className="text-cream-300 hover:text-cream-100 transition-colors text-sm">
-                  Our Shops
-                </Link>
-              </li>
-              <li>
-                <Link href="/museum" className="text-cream-300 hover:text-cream-100 transition-colors text-sm">
-                  Museum & Café
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-cream-300 hover:text-cream-100 transition-colors text-sm">
-                  Contact Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="text-cream-300 hover:text-cream-100 transition-colors text-sm">
-                  Craftsmanship
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Heritage & Collections */}
-          <div className="space-y-6">
-            <div className="px-4 py-2">
-              <h3 className="text-lg font-semibold text-cream-100 text-center uppercase tracking-wider">Heritage</h3>
-            </div>
-            <ul className="space-y-3">
-              <li>
-                <span className="text-cream-300 text-sm">Founded in {brandData.founded}</span>
-              </li>
-              <li>
-                <span className="text-cream-300 text-sm">Based in {brandData.location}</span>
-              </li>
-              <li>
-                <Link href="/about" className="text-cream-300 hover:text-cream-100 transition-colors text-sm">
-                  Our Story
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="text-cream-300 hover:text-cream-100 transition-colors text-sm">
-                  Traditional Techniques
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="text-cream-300 hover:text-cream-100 transition-colors text-sm">
-                  Artisan Collaborations
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact Information */}
-          <div className="space-y-6">
-            <div className="px-4 py-2">
-              <h3 className="text-lg font-semibold text-cream-100 text-center uppercase tracking-wider">Contact</h3>
-            </div>
-            <div className="space-y-4">
-              <div className="flex items-start space-x-3">
-                <MapPin size={16} className="text-cream-400 mt-1 flex-shrink-0" />
-                <div>
-                  <span className="text-cream-300 text-sm block">{brandData.contact.address}</span>
-                </div>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Phone size={16} className="text-cream-400 flex-shrink-0" />
-                <a
-                  href={`tel:${brandData.contact.phone}`}
-                  className="text-cream-300 hover:text-cream-100 transition-colors text-sm"
-                >
-                  {brandData.contact.phone}
-                </a>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Mail size={16} className="text-cream-400 flex-shrink-0" />
-                <a
-                  href={`mailto:${brandData.contact.email}`}
-                  className="text-cream-300 hover:text-cream-100 transition-colors text-sm"
-                >
-                  {brandData.contact.email}
-                </a>
-              </div>
-              <div className="flex items-center space-x-3">
-                <Clock size={16} className="text-cream-400 flex-shrink-0" />
-                <span className="text-cream-300 text-sm">Mon-Sat: 10AM-7PM</span>
-              </div>
-            </div>
-          </div>
         </div>
 
 
@@ -192,9 +91,9 @@ const Footer = () => {
               <Link href="/terms" className="text-cream-400 hover:text-cream-100 transition-colors border-b border-transparent hover:border-cream-100 pb-1">
                 Terms of Service
               </Link>
-              <Link href="/sitemap" className="text-cream-400 hover:text-cream-100 transition-colors border-b border-transparent hover:border-cream-100 pb-1">
+              {/* <Link href="/sitemap" className="text-cream-400 hover:text-cream-100 transition-colors border-b border-transparent hover:border-cream-100 pb-1">
                 Sitemap
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

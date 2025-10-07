@@ -1,11 +1,19 @@
-import { Clock, MapPin, Users, Star, Utensils } from 'lucide-react';
+import { Clock, MapPin, Users, Star, Utensils, Leaf, Coffee } from 'lucide-react';
+import Image from 'next/image';
 
 const CafeHero = () => {
   return (
     <section className="relative h-screen overflow-hidden">
       {/* Background Image */}
-      <div className="absolute inset-0 bg-gradient-to-br from-sage-600 to-terracotta-600">
-        <div className="absolute inset-0 bg-earth-900/40"></div>
+      <div className="absolute inset-0">
+        <Image
+          src="/images/anokhi cafe/20130129-IMG_0434copy.jpg"
+          alt="Anokhi Café Interior"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-maroon-900/50"></div>
       </div>
 
       {/* Content */}
@@ -13,42 +21,47 @@ const CafeHero = () => {
         <div className="container-max section-padding">
           <div className="max-w-4xl">
             <div className="animate-slide-up">
+              <div className="inline-block border-t border-b border-gold-300 px-6 py-2 mb-6">
+                <h5 className="text-sm text-gold-200 uppercase tracking-wider font-medium">
+                  Heritage Café
+                </h5>
+              </div>
               <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-6 leading-tight">
                 Anokhi Café
               </h1>
-              <p className="text-xl md:text-2xl text-earth-100 mb-8 leading-relaxed">
-                Savor authentic Indian cuisine in a heritage setting that perfectly complements 
-                our textile museum experience.
+              <p className="text-xl md:text-2xl text-gold-100 mb-8 leading-relaxed">
+                From humble beginnings as a few tables in the shade to a beloved haven serving 
+                fresh, organic produce from our farm and home-made delicacies.
               </p>
               
               {/* Quick Info */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
                 <div className="flex items-center space-x-3 text-white">
-                  <Clock size={24} className="text-sage-300" />
+                  <Clock size={24} className="text-gold-300" />
                   <div>
-                    <div className="text-sm text-earth-200">Hours</div>
+                    <div className="text-sm text-gold-200">Hours</div>
                     <div className="font-semibold">9 AM - 7 PM</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3 text-white">
-                  <MapPin size={24} className="text-sage-300" />
+                  <MapPin size={24} className="text-gold-300" />
                   <div>
-                    <div className="text-sm text-earth-200">Location</div>
+                    <div className="text-sm text-gold-200">Location</div>
                     <div className="font-semibold">Museum Grounds</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3 text-white">
-                  <Users size={24} className="text-sage-300" />
+                  <Leaf size={24} className="text-gold-300" />
                   <div>
-                    <div className="text-sm text-earth-200">Capacity</div>
-                    <div className="font-semibold">50 Seats</div>
+                    <div className="text-sm text-gold-200">Philosophy</div>
+                    <div className="font-semibold">Vegetarian</div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3 text-white">
-                  <Star size={24} className="text-sage-300" />
+                  <Coffee size={24} className="text-gold-300" />
                   <div>
-                    <div className="text-sm text-earth-200">Rating</div>
-                    <div className="font-semibold">4.9/5</div>
+                    <div className="text-sm text-gold-200">Since</div>
+                    <div className="font-semibold">2007</div>
                   </div>
                 </div>
               </div>

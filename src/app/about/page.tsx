@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import StorySection from '@/components/StorySection';
 import HeritageTimeline from '@/components/HeritageTimeline';
 import CraftsmanshipShowcase from '@/components/CraftsmanshipShowcase';
 import TeamSection from '@/components/TeamSection';
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="min-h-screen">
+      <StorySection />
       <HeritageTimeline />
       <CraftsmanshipShowcase />
       <ValuesSection />

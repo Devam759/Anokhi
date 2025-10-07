@@ -9,113 +9,218 @@
   }
   
   body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    color: #333;
-    line-height: 1.6;
+    font-family: 'Libre Baskerville', 'Noto Sans Devanagari', serif;
+    color: #4f3a32;
+    line-height: 1.7;
     margin: 0;
     padding: 0;
-    background-color: #fff;
+    background-color: #fdfcf8;
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(139, 69, 19, 0.02) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(184, 134, 11, 0.02) 0%, transparent 50%);
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
     margin-top: 1.5em;
     margin-bottom: 0.5em;
-    color: #2c2c2c;
+    color: #8B4513;
+    letter-spacing: 0.02em;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #8B4513;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  }
+  
+  h2 {
+    font-size: 2rem;
+    color: #8B4513;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    color: #A0522D;
   }
   
   p {
     margin-bottom: 1em;
+    color: #4f3a32;
+    line-height: 1.8;
+  }
+  
+  a {
+    color: #8B4513;
+    transition: color 0.3s ease;
+  }
+  
+  a:hover {
+    color: #A0522D;
   }
 }
 
 @layer components {
   .btn-primary {
-    padding: 10px 20px;
+    padding: 12px 24px;
     font-size: 1em;
-    color: #fff;
-    background-color: #8B4513;
-    border: none;
-    border-radius: 4px;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    color: #fdfcf8;
+    background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+    border: 2px solid #8B4513;
+    border-radius: 6px;
     cursor: pointer;
     transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 2px 4px rgba(139, 69, 19, 0.2);
   }
   
   .btn-primary:hover {
-    background-color: #A0522D;
+    background: linear-gradient(135deg, #A0522D 0%, #8B4513 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(139, 69, 19, 0.3);
   }
   
   .btn-secondary {
-    padding: 10px 20px;
+    padding: 12px 24px;
     font-size: 1em;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
     color: #8B4513;
     background-color: transparent;
     border: 2px solid #8B4513;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
     transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
   
   .btn-secondary:hover {
     background-color: #8B4513;
-    color: #fff;
+    color: #fdfcf8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(139, 69, 19, 0.2);
   }
   
   .section-padding {
-    @apply py-16 px-4 sm:px-6 lg:px-8;
+    @apply py-20 px-4 sm:px-6 lg:px-8;
   }
   
   .container-max {
     @apply max-w-7xl mx-auto;
   }
   
-  .text-gradient {
-    background: linear-gradient(135deg, #d76f29 0%, #ff9900 30%, #ed4a4a 70%, #4f46e5 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: none;
+  .heritage-section {
+    background: linear-gradient(135deg, #fdfcf8 0%, #faf8f0 100%);
+    position: relative;
   }
   
-  .heritage-pattern {
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d76f29' fill-opacity='0.04'%3E%3Cpath d='M30 30c0-16.569-13.431-30-30-30v30h30zm0 0c0 16.569 13.431 30 30 30V30H30z'/%3E%3C/g%3E%3C/svg%3E");
+  .heritage-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 20% 20%, rgba(139, 69, 19, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(184, 134, 11, 0.03) 0%, transparent 50%);
+    pointer-events: none;
   }
   
   .heritage-card {
-    background: #f9f9f9;
-    border: 1px solid #e6e0d6;
-    border-radius: 8px;
-    padding: 30px;
-    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #fdfcf8 0%, #faf8f0 100%);
+    border: 2px solid #e6d9ce;
+    border-radius: 12px;
+    padding: 32px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .heritage-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(139, 69, 19, 0.02) 0%, rgba(184, 134, 11, 0.02) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
   
   .heritage-card:hover {
-    box-shadow: 0 5px 15px rgba(139, 69, 19, 0.1);
-    transform: translateY(-2px);
+    border-color: #8B4513;
+    box-shadow: 0 8px 25px rgba(139, 69, 19, 0.15);
+    transform: translateY(-4px);
   }
   
-  .palace-shape {
-    clip-path: polygon(0% 0%, 100% 0%, 95% 10%, 100% 20%, 95% 30%, 100% 100%, 0% 100%);
+  .heritage-card:hover::before {
+    opacity: 1;
   }
   
-  .fortress-border {
-    border: 1px solid #e6e0d6;
-    background: #ffffff;
-    border-radius: 8px;
+  .heritage-title {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    color: #8B4513;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
     position: relative;
-    transition: all 0.3s ease;
   }
   
-  .fortress-border:hover {
-    border-color: #d76f29;
-    box-shadow: 0 5px 15px rgba(215, 111, 41, 0.1);
+  .heritage-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, #8B4513 0%, #B8860B 50%, #8B4513 100%);
+    border-radius: 1px;
   }
   
-  .ornate-pattern {
+  .heritage-text {
+    font-family: 'Libre Baskerville', serif;
+    color: #4f3a32;
+    line-height: 1.8;
+  }
+  
+  .ornate-border {
+    border: 2px solid #e6d9ce;
+    border-radius: 12px;
+    position: relative;
+    background: linear-gradient(135deg, #fdfcf8 0%, #faf8f0 100%);
+  }
+  
+  .ornate-border::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #8B4513, #B8860B, #8B4513);
+    border-radius: 14px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .ornate-border:hover::before {
+    opacity: 1;
+  }
+  
+  .traditional-pattern {
     background-image: 
-      radial-gradient(circle at 25% 25%, rgba(215, 111, 41, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 75% 75%, rgba(255, 153, 0, 0.08) 0%, transparent 50%),
-      linear-gradient(45deg, transparent 40%, rgba(215, 111, 41, 0.05) 50%, transparent 60%);
+      radial-gradient(circle at 25% 25%, rgba(139, 69, 19, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(184, 134, 11, 0.05) 0%, transparent 50%),
+      linear-gradient(45deg, transparent 40%, rgba(139, 69, 19, 0.03) 50%, transparent 60%);
   }
 }
 

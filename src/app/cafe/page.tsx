@@ -5,17 +5,17 @@ import CafeExperience from '@/components/CafeExperience';
 import CafeInfo from '@/components/CafeInfo';
 
 export const metadata: Metadata = {
-  title: "Anokhi Café - Authentic Indian Cuisine & Artisanal Beverages",
-  description: "Experience authentic Indian cuisine at Anokhi Café in Jaipur. Enjoy traditional dishes, artisanal beverages, and a heritage setting that complements our textile museum.",
-  keywords: "Anokhi Café, Indian cuisine, Jaipur restaurant, authentic food, artisanal beverages, heritage café, traditional dishes",
+  title: "Anokhi Café - Fresh Organic Cuisine & Heritage Experience",
+  description: "Experience fresh, organic cuisine at Anokhi Café in Jaipur. From humble beginnings to serving farm-fresh produce, vegetarian dishes, and home-made delicacies in a heritage setting.",
+  keywords: "Anokhi Café, organic cuisine, vegetarian restaurant, Jaipur café, farm fresh, heritage café, fresh produce, home-made cakes",
 };
 
 export default function CafePage() {
   return (
     <div className="min-h-screen">
       <CafeHero />
-      <CafeMenu />
       <CafeExperience />
+      <CafeMenu />
       <CafeInfo />
     </div>
   );

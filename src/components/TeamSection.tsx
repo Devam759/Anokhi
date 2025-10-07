@@ -49,13 +49,18 @@ const TeamSection = () => {
   ];
 
   return (
-    <section className="section-padding bg-earth-50">
+    <section className="section-padding heritage-section">
       <div className="container-max">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-earth-900 mb-6">
+          <div className="inline-block border-t border-b border-brown-600 px-6 py-2 mb-6">
+            <h5 className="text-sm text-brown-700 uppercase tracking-wider font-medium">
+              Our People
+            </h5>
+          </div>
+          <h2 className="heritage-title text-4xl md:text-5xl mb-6">
             Meet Our Team
           </h2>
-          <p className="text-xl text-earth-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="heritage-text text-xl max-w-3xl mx-auto leading-relaxed">
             The passionate individuals behind Anokhi, dedicated to preserving heritage 
             while creating beautiful, contemporary products.
           </p>
@@ -65,12 +70,12 @@ const TeamSection = () => {
           {teamMembers.map((member, index) => (
             <div
               key={index}
-              className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+              className="group heritage-card"
             >
               <div className="relative mb-6">
-                <div className="aspect-square bg-gradient-to-br from-terracotta-100 to-sage-100 rounded-2xl flex items-center justify-center overflow-hidden">
-                  <div className="w-24 h-24 bg-terracotta-200 rounded-full flex items-center justify-center">
-                    <span className="text-2xl font-bold text-terracotta-700">
+                <div className="aspect-square bg-gradient-to-br from-brown-100 to-cream-100 rounded-2xl flex items-center justify-center overflow-hidden">
+                  <div className="w-24 h-24 bg-brown-200 rounded-full flex items-center justify-center">
+                    <span className="text-2xl font-bold text-brown-700">
                       {member.name.split(' ').map(n => n[0]).join('')}
                     </span>
                   </div>
@@ -80,36 +85,36 @@ const TeamSection = () => {
                 <div className="absolute bottom-2 right-2 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <a
                     href={member.social.instagram}
-                    className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-terracotta-50 transition-colors"
+                    className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-brown-50 transition-colors"
                     aria-label={`${member.name} Instagram`}
                   >
-                    <Instagram size={14} className="text-earth-600" />
+                    <Instagram size={14} className="text-brown-600" />
                   </a>
                   <a
                     href={member.social.twitter}
-                    className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-terracotta-50 transition-colors"
+                    className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-brown-50 transition-colors"
                     aria-label={`${member.name} Twitter`}
                   >
-                    <Twitter size={14} className="text-earth-600" />
+                    <Twitter size={14} className="text-brown-600" />
                   </a>
                   <a
                     href={member.social.linkedin}
-                    className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-terracotta-50 transition-colors"
+                    className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-brown-50 transition-colors"
                     aria-label={`${member.name} LinkedIn`}
                   >
-                    <Linkedin size={14} className="text-earth-600" />
+                    <Linkedin size={14} className="text-brown-600" />
                   </a>
                 </div>
               </div>
 
               <div className="text-center">
-                <h3 className="text-xl font-serif font-semibold text-earth-900 mb-2">
+                <h3 className="text-xl font-serif font-semibold text-brown-800 mb-2">
                   {member.name}
                 </h3>
-                <p className="text-terracotta-600 font-medium mb-4">
+                <p className="text-brown-600 font-medium mb-4">
                   {member.role}
                 </p>
-                <p className="text-earth-600 text-sm leading-relaxed">
+                <p className="heritage-text text-sm leading-relaxed">
                   {member.bio}
                 </p>
               </div>
@@ -119,11 +124,11 @@ const TeamSection = () => {
 
         {/* Call to Action */}
         <div className="mt-16 text-center">
-          <div className="bg-white rounded-3xl p-12 shadow-lg">
-            <h3 className="text-2xl font-serif font-bold text-earth-900 mb-4">
+          <div className="ornate-border p-12">
+            <h3 className="heritage-title text-2xl mb-4">
               Join Our Journey
             </h3>
-            <p className="text-earth-600 mb-8 max-w-2xl mx-auto">
+            <p className="heritage-text mb-8 max-w-2xl mx-auto">
               Are you passionate about traditional crafts and heritage preservation? 
               We're always looking for talented individuals to join our mission.
             </p>

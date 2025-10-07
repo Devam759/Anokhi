@@ -3,38 +3,38 @@
     {
       "year": "1970",
       "title": "The Foundation",
-      "description": "Anokhi was founded with a mission rooted in craft conservation and development through design and project funding.",
-        "image": "/images/stage2.jpg"
+      "description": "Founded by John and Faith Singh when Jaipur's block printing industry was at a very low ebb. ANOKHI started working with craftspeople in and around Jaipur to help revitalise age-old skills.",
+      "image": "/images/stage2.jpg"
+    },
+    {
+      "year": "1970s",
+      "title": "Early Collections",
+      "description": "ANOKHI began with small clothing collections, developing striking ranges around traditional techniques while infusing pieces with contemporary twists for modern users.",
+      "image": "/images/stage3.jpg"
     },
     {
       "year": "1980s",
-      "title": "Design Studio Establishment",
-      "description": "The spacious, verdant workplace on the outskirts of Jaipur became the heart of Anokhi's design studio and craft development.",
-        "image": "/images/stage3.jpg"
+      "title": "International Expansion",
+      "description": "Traditional prints were re-imagined as stylish evening dresses, bolero jackets and kaftans, sold through boutiques across England and expanding globally.",
+      "image": "/images/stage4.jpg"
     },
     {
       "year": "1990s",
-      "title": "International Recognition",
-      "description": "Anokhi's distinctive prints, silhouettes and product quality gained recognition in small stores and online businesses across the globe.",
-        "image": "/images/stage4.jpg"
+      "title": "Next Generation",
+      "description": "ANOKHI was placed in the hands of the next generation, who continued to find inventive ways to sustain secure livelihoods for employees and artisanal relationships.",
+      "image": "/images/stage5.jpg"
     },
     {
-      "year": "2000s",
-      "title": "Archive Development",
-      "description": "The ANOKHI archive of swatches, paper patterns, toiles and samples grew to span over decades of creativity and craft industry collaboration.",
-        "image": "/images/stage5.jpg"
+      "year": "2005",
+      "title": "Museum Foundation",
+      "description": "ANOKHI founded the Anokhi Museum of Hand Printing, dedicated to the collection, preservation and interpretation of block printed fabric.",
+      "image": "/images/stage6.jpg"
     },
     {
-      "year": "2010s",
-      "title": "Craft Conservation Focus",
-      "description": "Anokhi became an alternative role model for good business practices and the ongoing revival of traditional skills.",
-        "image": "/images/stage6.jpg"
-    },
-    {
-      "year": "2024",
-      "title": "54 Years of Heritage",
-      "description": "Continuing the legacy of craft conservation through design, maintaining quality and constancy through personalized in-store experiences.",
-        "image": "/images/stage7.jpg"
+      "year": "Present",
+      "title": "Continuing Legacy",
+      "description": "ANOKHI remains deeply committed to supporting traditional craftsmanship and its continued revival, with shops across India and global recognition.",
+      "image": "/images/stage7.jpg"
     }
   ],
   "craftsmanship": {

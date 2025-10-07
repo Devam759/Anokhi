@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
-import ContactHero from '@/components/ContactHero';
 import ContactForm from '@/components/ContactForm';
-import ContactInfo from '@/components/ContactInfo';
-import ContactMap from '@/components/ContactMap';
 
 export const metadata: Metadata = {
   title: "Contact Us - Anokhi Heritage & Craftsmanship",
@@ -13,10 +10,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="min-h-screen">
-      <ContactHero />
       <ContactForm />
-      <ContactInfo />
-      <ContactMap />
     </div>
   );
 }

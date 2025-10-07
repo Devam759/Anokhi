@@ -8,39 +8,73 @@ const CafeMenu = () => {
 
   const menuCategories = [
     {
-      name: 'Traditional Dishes',
+      name: 'Hot Drinks',
       items: [
-        { name: 'Dal Makhani', description: 'Creamy black lentils cooked overnight with butter and cream', price: '₹180' },
-        { name: 'Chicken Curry', description: 'Aromatic chicken curry with traditional Rajasthani spices', price: '₹220' },
-        { name: 'Paneer Butter Masala', description: 'Fresh cottage cheese in rich tomato and cream sauce', price: '₹160' },
-        { name: 'Biryani', description: 'Fragrant basmati rice with choice of chicken or vegetables', price: '₹200' }
+        { name: 'Fresh French press biodynamic Coffee', description: 'Premium biodynamic coffee brewed fresh', price: '₹120' },
+        { name: 'Loose leaf black tea selection', description: 'Curated selection of premium black teas', price: '₹80' },
+        { name: 'Green tea', description: 'Refreshing green tea with antioxidants', price: '₹70' },
+        { name: 'Chamomile tea', description: 'Soothing chamomile for relaxation', price: '₹70' },
+        { name: 'Fresh lemongrass infusion', description: 'Aromatic lemongrass herbal infusion', price: '₹80' },
+        { name: 'Fresh mint infusion', description: 'Refreshing mint herbal tea', price: '₹80' },
+        { name: 'Iced Tea with lime', description: 'Cool iced tea with fresh lime', price: '₹90' }
       ]
     },
     {
-      name: 'Street Food',
+      name: 'Juices & Drinks',
       items: [
-        { name: 'Samosa', description: 'Crispy pastry filled with spiced potatoes and peas', price: '₹40' },
-        { name: 'Pakora Platter', description: 'Mixed vegetable fritters with mint chutney', price: '₹120' },
-        { name: 'Chaat', description: 'Traditional Indian street snack with yogurt and chutneys', price: '₹80' },
-        { name: 'Vada Pav', description: 'Spiced potato fritter in soft bun with chutneys', price: '₹60' }
+        { name: 'Fresh Pomegranate Juice', description: 'Freshly squeezed pomegranate juice', price: '₹120' },
+        { name: 'Seasonal Fresh Juices', description: 'Daily selection of seasonal fresh juices', price: '₹100' },
+        { name: 'Lime & Ginger Cordial', description: 'Refreshing lime and ginger cordial', price: '₹80' },
+        { name: 'Fresh Lime Soda', description: 'Classic fresh lime soda', price: '₹70' }
       ]
     },
     {
-      name: 'Beverages',
+      name: 'Breads & Sandwiches',
       items: [
-        { name: 'Masala Chai', description: 'Spiced tea brewed with traditional Indian spices', price: '₹50' },
-        { name: 'Lassi', description: 'Creamy yogurt drink available in sweet or salty', price: '₹80' },
-        { name: 'Fresh Juice', description: 'Seasonal fresh fruit juices', price: '₹100' },
-        { name: 'Filter Coffee', description: 'Traditional South Indian filter coffee', price: '₹60' }
+        { name: 'Cream cheese bagel', description: 'Fresh bagel with cream cheese', price: '₹150' },
+        { name: 'Cheese muffin', description: 'Homemade cheese muffin', price: '₹120' },
+        { name: 'Sun-dried tomato & cream cheese bagel', description: 'Bagel with sun-dried tomatoes and cream cheese', price: '₹180' },
+        { name: 'Cheese & pesto focaccia', description: 'Focaccia with cheese and pesto', price: '₹160' },
+        { name: 'Tomato & hummus wholemeal sandwich', description: 'Wholemeal bread with tomato and hummus', price: '₹140' },
+        { name: 'Brie, tomato and basil baguette', description: 'French baguette with brie, tomato and basil', price: '₹200' }
       ]
     },
     {
-      name: 'Desserts',
+      name: 'Salads & Sides',
       items: [
-        { name: 'Gulab Jamun', description: 'Soft milk dumplings in rose-flavored syrup', price: '₹80' },
-        { name: 'Ras Malai', description: 'Cottage cheese dumplings in sweetened milk', price: '₹90' },
-        { name: 'Kulfi', description: 'Traditional Indian ice cream in various flavors', price: '₹70' },
-        { name: 'Jalebi', description: 'Crispy sweet spirals soaked in sugar syrup', price: '₹60' }
+        { name: 'Thai Bean Salad', description: 'Fresh beans with Thai-inspired dressing', price: '₹180' },
+        { name: 'Feta & Tapenade Salad', description: 'Mixed greens with feta and olive tapenade', price: '₹200' },
+        { name: 'Blue Cheese Salad', description: 'Fresh salad with blue cheese dressing', price: '₹190' },
+        { name: 'Toasted Seed Salad', description: 'Nutritious salad with toasted seeds', price: '₹170' }
+      ]
+    },
+    {
+      name: 'Mains',
+      items: [
+        { name: 'Roasted Tomato Soup', description: 'Creamy roasted tomato soup', price: '₹160' },
+        { name: 'Masaman Thai Curry', description: 'Authentic Thai curry with vegetables', price: '₹220' },
+        { name: 'Bean Burger', description: 'Homemade bean burger with fresh vegetables', price: '₹200' },
+        { name: 'Falafel pockets', description: 'Crispy falafel in pita pockets', price: '₹180' },
+        { name: 'Corn Fritters', description: 'Golden corn fritters with dipping sauce', price: '₹170' },
+        { name: 'Stir fry', description: 'Fresh vegetables stir-fried to perfection', price: '₹190' },
+        { name: 'Penne arrabiata', description: 'Spicy penne pasta with tomato sauce', price: '₹200' },
+        { name: 'Pizza with char grilled vegetables', description: 'Wood-fired pizza with grilled vegetables', price: '₹250' },
+        { name: 'Pizza with fresh tomato & mozzarella', description: 'Classic margherita pizza', price: '₹240' },
+        { name: 'Pizza with caramelized onions & goats cheese', description: 'Gourmet pizza with caramelized onions', price: '₹280' }
+      ]
+    },
+    {
+      name: 'Cakes',
+      items: [
+        { name: 'Banana Cake', description: 'Moist banana cake with natural sweetness', price: '₹120' },
+        { name: 'Carrot Cake with Cream Cheese Topping', description: 'Classic carrot cake with cream cheese frosting', price: '₹150' },
+        { name: 'Baked Mascarpone Cheesecake', description: 'Rich mascarpone cheesecake', price: '₹180' },
+        { name: 'Coffee Cake (VG)', description: 'Vegan coffee cake', price: '₹130' },
+        { name: 'Chocolate Cake with Chocolate ganache (VG)', description: 'Vegan chocolate cake with ganache', price: '₹160' },
+        { name: 'Chocolate Cheesecake', description: 'Decadent chocolate cheesecake', price: '₹190' },
+        { name: 'Chocolate & Orange torte', description: 'Rich chocolate and orange torte', price: '₹170' },
+        { name: 'Apple & cinnamon cake', description: 'Warm apple and cinnamon cake', price: '₹140' },
+        { name: 'Coconut & Rose Cake', description: 'Delicate coconut and rose flavored cake', price: '₹160' }
       ]
     }
   ];
@@ -54,134 +88,77 @@ const CafeMenu = () => {
   };
 
   return (
-    <section id="menu" className="section-padding bg-white">
+    <section id="menu" className="section-padding bg-gradient-to-b from-cream-50 to-gold-50">
       <div className="container-max">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-earth-900 mb-6">
+        <div className="text-center mb-12">
+          {/* <div className="inline-block border-t border-b border-maroon-600 px-6 py-2 mb-6">
+            <h5 className="text-sm text-maroon-700 uppercase tracking-wider font-medium">
+              Fresh & Organic
+            </h5>
+          </div> */}
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-maroon-800 mb-6">
             Our Menu
           </h2>
-          <p className="text-xl text-earth-600 max-w-3xl mx-auto leading-relaxed">
-            Experience authentic Indian flavors with our carefully curated menu featuring 
-            traditional recipes and fresh, locally-sourced ingredients.
+          <p className="text-lg text-maroon-700 max-w-2xl mx-auto leading-relaxed">
+            Fresh, organic ingredients from our farm and home-made delicacies.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          {/* Menu Categories */}
-          <div>
-            <div className="space-y-4 mb-8">
-              {menuCategories.map((category, index) => (
-                <button
-                  key={index}
-                  onClick={() => setActiveCategory(index)}
-                  className={`w-full text-left p-4 rounded-lg transition-all duration-300 ${
-                    activeCategory === index
-                      ? 'bg-terracotta-50 border-2 border-terracotta-200'
-                      : 'bg-earth-50 hover:bg-earth-100 border-2 border-transparent'
-                  }`}
-                >
-                  <h3 className="text-lg font-serif font-semibold text-earth-900">
-                    {category.name}
-                  </h3>
-                  <p className="text-earth-600 text-sm">
-                    {category.items.length} items available
-                  </p>
-                </button>
-              ))}
-            </div>
-
-            {/* Navigation */}
-            <div className="flex justify-center space-x-4">
+        {/* Compact Menu Layout */}
+        <div className="max-w-6xl mx-auto">
+          {/* Category Tabs */}
+          <div className="flex flex-wrap justify-center gap-2 mb-8">
+            {menuCategories.map((category, index) => (
               <button
-                onClick={prevCategory}
-                className="w-12 h-12 bg-earth-100 rounded-full flex items-center justify-center hover:bg-earth-200 transition-colors"
-                aria-label="Previous category"
+                key={index}
+                onClick={() => setActiveCategory(index)}
+                    className={`px-5 py-3 rounded-full text-sm font-serif font-semibold transition-all duration-300 ${
+                      activeCategory === index
+                        ? 'bg-maroon-600 text-white shadow-lg'
+                        : 'bg-gold-100 text-maroon-700 hover:bg-gold-200 hover:shadow-md'
+                    }`}
               >
-                <ChevronLeft size={20} className="text-earth-600" />
+                {category.name}
               </button>
-              <button
-                onClick={nextCategory}
-                className="w-12 h-12 bg-earth-100 rounded-full flex items-center justify-center hover:bg-earth-200 transition-colors"
-                aria-label="Next category"
-              >
-                <ChevronRight size={20} className="text-earth-600" />
-              </button>
-            </div>
+            ))}
           </div>
 
-          {/* Menu Items */}
-          <div className="bg-earth-50 rounded-2xl p-8">
-            <h3 className="text-2xl font-serif font-bold text-earth-900 mb-6">
-              {menuCategories[activeCategory].name}
-            </h3>
+          {/* Menu Items Grid */}
+              <div className="bg-white p-6 rounded-lg shadow-md border border-gold-200">
+                <h3 className="text-2xl font-serif font-bold text-maroon-800 mb-6 text-center">
+                  {menuCategories[activeCategory].name}
+                </h3>
             
-            <div className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {menuCategories[activeCategory].items.map((item, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow"
+                  className="flex justify-between items-start p-4 hover:bg-gold-50 rounded-lg transition-colors border-b border-gold-200 last:border-b-0"
                 >
-                  <div className="flex justify-between items-start mb-2">
-                    <h4 className="font-semibold text-earth-900">
+                  <div className="flex-1 pr-4">
+                    <h4 className="font-serif font-semibold text-maroon-800 text-base mb-1">
                       {item.name}
                     </h4>
-                    <span className="font-bold text-terracotta-600">
-                      {item.price}
-                    </span>
+                    <p className="text-maroon-600 text-sm leading-relaxed font-light">
+                      {item.description}
+                    </p>
                   </div>
-                  <p className="text-earth-600 text-sm leading-relaxed">
-                    {item.description}
-                  </p>
+                  <span className="font-serif font-bold text-maroon-700 text-base whitespace-nowrap">
+                    {item.price}
+                  </span>
                 </div>
               ))}
             </div>
 
-            {/* Special Notes */}
-            <div className="mt-8 pt-6 border-t border-earth-200">
-              <div className="bg-white rounded-lg p-4">
-                <h4 className="font-semibold text-earth-900 mb-2">Special Notes</h4>
-                <ul className="text-earth-600 text-sm space-y-1">
-                  <li>• All dishes can be made vegetarian upon request</li>
-                  <li>• Spice levels can be adjusted to your preference</li>
-                  <li>• Fresh ingredients sourced daily from local markets</li>
-                  <li>• Traditional recipes passed down through generations</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* All Categories Grid */}
-        <div className="mt-20">
-          <h3 className="text-3xl font-serif font-bold text-earth-900 text-center mb-12">
-            All Menu Categories
-          </h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {menuCategories.map((category, index) => (
-              <div
-                key={index}
-                className={`bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer border-2 ${
-                  activeCategory === index ? 'border-terracotta-200' : 'border-transparent hover:border-earth-200'
-                }`}
-                onClick={() => setActiveCategory(index)}
-              >
-                <div className="aspect-video bg-gradient-to-br from-terracotta-100 to-sage-100 rounded-xl flex items-center justify-center mb-4">
-                  <span className="text-2xl">
-                    {index === 0 && '🍽️'}
-                    {index === 1 && '🌶️'}
-                    {index === 2 && '☕'}
-                    {index === 3 && '🍰'}
-                  </span>
+            {/* Special Notes - Compact */}
+                <div className="mt-6 pt-4 border-t border-gold-200">
+                  <div className="text-center">
+                    <p className="text-maroon-600 text-sm font-light italic">
+                      All dishes are vegetarian • Vegan & gluten-free options available •
+                      Fresh ingredients from our organic farm • Menu varies seasonally
+                    </p>
+                  </div>
                 </div>
-                <h4 className="font-serif font-semibold text-earth-900 mb-2">
-                  {category.name}
-                </h4>
-                <p className="text-sm text-earth-600">
-                  {category.items.length} delicious options
-                </p>
-              </div>
-            ))}
           </div>
         </div>
       </div>

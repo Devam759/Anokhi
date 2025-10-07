@@ -172,35 +172,6 @@ const CafeInfo = () => {
           </div>
         </div>
 
-        {/* Additional Information */}
-        <div className="mt-16 bg-earth-50 rounded-3xl p-12 text-center">
-          <h3 className="text-3xl font-serif font-bold text-earth-900 mb-6">
-            Perfect for Every Occasion
-          </h3>
-          <p className="text-xl text-earth-600 mb-8 max-w-4xl mx-auto leading-relaxed">
-            Whether you're visiting the museum, celebrating a special occasion, or simply 
-            looking for authentic Indian cuisine, Anokhi Café provides the perfect setting 
-            with exceptional food and warm hospitality.
-          </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
-            <div className="bg-white rounded-lg p-6 shadow-sm">
-              <div className="text-3xl mb-3">🏛️</div>
-              <h4 className="font-semibold text-earth-900 mb-2">Museum Visitors</h4>
-              <p className="text-earth-600 text-sm">Perfect lunch spot after exploring our textile exhibits</p>
-            </div>
-            <div className="bg-white rounded-lg p-6 shadow-sm">
-              <div className="text-3xl mb-3">🎉</div>
-              <h4 className="font-semibold text-earth-900 mb-2">Special Events</h4>
-              <p className="text-earth-600 text-sm">Host your celebrations in our heritage setting</p>
-            </div>
-            <div className="bg-white rounded-lg p-6 shadow-sm">
-              <div className="text-3xl mb-3">👨‍👩‍👧‍👦</div>
-              <h4 className="font-semibold text-earth-900 mb-2">Family Dining</h4>
-              <p className="text-earth-600 text-sm">Kid-friendly menu and spacious seating</p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

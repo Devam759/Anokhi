@@ -60,6 +60,33 @@ module.exports = {
             800: '#6a5844',
             900: '#574939',
             950: '#2f261e',
+          },
+          // Traditional Indian Heritage Colors
+          maroon: {
+            50: '#fdf2f2',
+            100: '#fce7e7',
+            200: '#f9d2d2',
+            300: '#f4b0b0',
+            400: '#ec8080',
+            500: '#e55a5a',
+            600: '#d13a3a',
+            700: '#b02d2d',
+            800: '#8B4513', // Primary maroon
+            900: '#7a2e2e',
+            950: '#421717',
+          },
+          gold: {
+            50: '#fffdf2',
+            100: '#fffce7',
+            200: '#fff7d2',
+            300: '#ffefb0',
+            400: '#ffe280',
+            500: '#ffd55a',
+            600: '#B8860B', // Primary gold
+            700: '#b8860b',
+            800: '#9a6f08',
+            900: '#7d5a06',
+            950: '#432f03',
           }
         },
       fontFamily: {
